@@ -1,0 +1,84 @@
+
+
+
+
+tables
+- member table
+- member status table
+- membef type table
+- application table
+
+
+
+feed from log to web
+- captain's test
+  - by whom
+  - date
+  - type?
+  
+- member
+  - member_id
+  - primary_member_id
+  - locker_id
+  - oar_amount
+  
+  
+- locker
+  - locker_is
+  - locker_type_d
+  
+- locker_type
+  - locker_type_id
+  - description
+  - name
+  
+- racck
+  - rack_id
+  - rack_type_id
+  
+- rack_type
+  - rack_type_id
+  - description
+  
+- rack_member
+  - rack_id
+  - member_id
+  - year
+  - description (for boat)
+  - log_boat_id
+  
+- activity
+  - activity_id
+  - group_id
+  - activity_type_id
+  - description
+  - bill_amount
+  
+- activuty_type
+  - activity_type_id
+  - name
+  
+- group
+  - group_id
+  - name
+  - descripyion
+  - group_type_id
+  
+- group_type
+  - group_type_id
+  - name
+  
+- member_group
+  - member_group_id
+  - member_id
+  - group_id
+  - member_group_type_id
+  
+- member_group_type
+  - member_group_ytpe_id
+  - name
+  - web display name
+  - description
+  
+
+
