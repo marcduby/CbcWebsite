@@ -1,31 +1,19 @@
 
 
 
-
+DONE
+----
 tables
 - member table
 - member status table
 - membef type table
 - application table
 
-
-
-feed from log to web
-- captain's test
-  - by whom
-  - date
-  - type?
-  
 - member
   - member_id
   - primary_member_id
   - locker_id
   - oar_amount
-  
-  
-- locker
-  - locker_is
-  - locker_type_d
   
 - locker_type
   - locker_type_id
@@ -39,7 +27,25 @@ feed from log to web
 - rack_type
   - rack_type_id
   - description
+
   
+  
+NOT DONE
+--------
+feed from log to web
+- captain's test
+  - by whom
+  - date
+  - type?
+  
+- locker
+  - locker_is
+  - locker_type_d
+  
+- activuty_type
+  - activity_type_id
+  - name
+
 - rack_member
   - rack_id
   - member_id
@@ -53,10 +59,6 @@ feed from log to web
   - activity_type_id
   - description
   - bill_amount
-  
-- activuty_type
-  - activity_type_id
-  - name
   
 - group
   - group_id

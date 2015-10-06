@@ -74,8 +74,25 @@ create table member (
     last_name varchar(4000) not null,
     member_status_id int(9) not null default 1,
     member_type_id int(9) not null default 1,
+    locker_id int(9) null,
     version bigint(19) not null default 0,
     date_created timestamp,
     last_updated date);
+
+-- rack table
+drop table if exists rack;
+create table rack (
+    rack_id int(9) not null primary key,
+    rack_type_id int(9) not null,
+    web_name varchar(4000) not null,
+    name varchar(4000) not null,
+    version bigint(19) not null default 0,
+    date_created timestamp,
+    last_updated date);
+
+-- create 2 racks for links
+insert into rack (rack_id, rack_type_id, web_name, name, last_updated) values(1, 1, 'Indoor rack', 'Generic indoor rack', sysdate());
+insert into rack (rack_id, rack_type_id, web_name, name, last_updated) values(1, 2, 'Outdoor rack', 'Generic outdoor rack', sysdate());
+insert into rack (rack_id, rack_type_id, web_name, name, last_updated) values(3, 3, 'Temporary rack', 'Generic temporary rack', sysdate());
 
 
