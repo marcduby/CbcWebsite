@@ -1,6 +1,7 @@
 
 -- drop all tables
 drop table if exists member;
+drop table if exists groups;
 drop table if exists member_application;
 drop table if exists rack;
 drop table if exists locker;
@@ -116,17 +117,30 @@ create table locker (
     date_created timestamp,
     last_updated date);
 
+-- group table
+create table groups (
+    group_id int(9) not null auto_increment primary key,
+    group_type_id int(9) not null,
+    name varchar(4000) not null,
+    version bigint(19) not null default 0,
+    date_created timestamp,
+    last_updated date,
+    foreign key (group_type_id) references group_type(group_type_id));
+    
 -- activity table
 create table activity (
     activity_id int(9) not null auto_increment primary key,
     activity_type_id int(9) not null,
+    group_id int(9) not null,
     name varchar(4000) not null,
     date_held date,
-    has_fee enum('Y', 'N') not null default 'N',
-    fee float(10,2) default 0.00,
+    has_bill_fee enum('Y', 'N') not null default 'N',
+    bill_fee float(10,2) default 0.00,
     version bigint(19) not null default 0,
     date_created timestamp,
-    last_updated date);
+    last_updated date,
+    foreign key (activity_type_id) references activity_type(activity_type_id),
+    foreign key (group_id) references groups(group_id));
 
 -- member table
 create table member (

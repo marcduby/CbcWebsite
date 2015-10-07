@@ -28,6 +28,27 @@ tables
   - rack_type_id
   - description
 
+- locker
+  - locker_is
+  - locker_type_d
+  
+- activuty_type
+  - activity_type_id
+  - name
+
+- group_type
+  - group_type_id
+  - name
+  
+- activity
+  - activity_id
+  - group_id
+  - activity_type_id
+  - description
+  - bill_amount
+  
+
+
   
   
 NOT DONE
@@ -38,14 +59,6 @@ feed from log to web
   - date
   - type?
   
-- locker
-  - locker_is
-  - locker_type_d
-  
-- activuty_type
-  - activity_type_id
-  - name
-
 - rack_member
   - rack_id
   - member_id
@@ -53,22 +66,11 @@ feed from log to web
   - description (for boat)
   - log_boat_id
   
-- activity
-  - activity_id
-  - group_id
-  - activity_type_id
-  - description
-  - bill_amount
-  
 - group
   - group_id
   - name
   - descripyion
   - group_type_id
-  
-- group_type
-  - group_type_id
-  - name
   
 - member_group
   - member_group_id
