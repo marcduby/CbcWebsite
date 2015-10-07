@@ -1,15 +1,17 @@
 
 -- drop all tables
+drop table if exists rack_member;
 drop table if exists member;
+drop table if exists activity;
 drop table if exists groups;
 drop table if exists member_application;
 drop table if exists rack;
 drop table if exists locker;
-drop table if exists activity;
 drop table if exists rack_type;
 drop table if exists locker_type;
 drop table if exists member_status;
 drop table if exists member_type;
+drop table if exists member_group_type;
 drop table if exists activity_type;
 drop table if exists group_type;
 
@@ -69,6 +71,17 @@ create table group_type (
 insert into group_type values(1, 'Social', 'A social group');
 insert into group_type values(2, 'Committee', 'A committee group for the club');
 insert into group_type values(3, 'Volunteer', 'A group for volunteer activities');
+
+-- member group type lookup table
+create table member_group_type (
+    member_group_type_id int(9) not null primary key,
+    web_name varchar(1000) not null,
+    description varchar(4000));
+
+-- insert rows into group type table
+insert into member_group_type values(1, 'Chair', 'Chair of the group');
+insert into member_group_type values(2, 'Committee', 'A committee member of the group');
+insert into member_group_type values(3, 'Volunteer', 'A volunteer of the group');
 
 -- activity type table
 create table activity_type (
@@ -159,9 +172,37 @@ create table member (
     foreign key (member_type_id) references member_type(member_type_id),
     foreign key (locker_id) references locker(locker_id));
 
+-- rack member table
+create table rack_member (
+    rack_member_id int(9) not null auto_increment primary key,
+    member_id int(9) not null,
+    rack_id int(9) not null,
+    year int(4) not null,
+    description varchar(4000),
+    log_boat_id varchar(4000),                  -- for pointing to log book boat id that will be on the rack
+    version bigint(19) not null default 0,
+    date_created timestamp,
+    last_updated date,
+    foreign key (member_id) references member(member_id),
+    foreign key (rack_id) references rack(rack_id));
 
+-- rack member table
+create table member_group (
+    member_group_id int(9) not null auto_increment primary key,
+    member_id int(9) not null,
+    group_id int(9) not null,
+    member_group_type_id int(9) not null,
+    year int(4) not null,
+    description varchar(4000),
+    log_boat_id varchar(4000),                  -- for pointing to log book boat id that will be on the rack
+    version bigint(19) not null default 0,
+    date_created timestamp,
+    last_updated date,
+    foreign key (member_id) references member(member_id),
+    foreign key (member_group_type_id) references member_group_type(member_group_type_id),
+    foreign key (group_id) references groups(group_id));
 
-
+-- member group table
 
 
 

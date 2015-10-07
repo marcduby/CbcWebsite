@@ -47,18 +47,6 @@ tables
   - description
   - bill_amount
   
-
-
-  
-  
-NOT DONE
---------
-feed from log to web
-- captain's test
-  - by whom
-  - date
-  - type?
-  
 - rack_member
   - rack_id
   - member_id
@@ -72,17 +60,29 @@ feed from log to web
   - descripyion
   - group_type_id
   
+- member_group_type
+  - member_group_ytpe_id
+  - name
+  - web display name
+  - description
+
+
+  
+  
+NOT DONE
+--------
+feed from log to web
+- captain's test
+  - by whom
+  - date
+  - type?
+  
 - member_group
   - member_group_id
   - member_id
   - group_id
   - member_group_type_id
   
-- member_group_type
-  - member_group_ytpe_id
-  - name
-  - web display name
-  - description
   
 
 
