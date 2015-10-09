@@ -1,6 +1,7 @@
 
 -- drop all tables
 drop table if exists rack_member;
+drop table if exists member_group;
 drop table if exists member;
 drop table if exists activity;
 drop table if exists groups;
@@ -128,7 +129,8 @@ create table locker (
     name varchar(4000) not null,
     version bigint(19) not null default 0,
     date_created timestamp,
-    last_updated date);
+    last_updated date,
+    foreign key (locker_type_id) references locker_type(locker_type_id));
 
 -- group table
 create table groups (
@@ -186,7 +188,7 @@ create table rack_member (
     foreign key (member_id) references member(member_id),
     foreign key (rack_id) references rack(rack_id));
 
--- rack member table
+-- member group table
 create table member_group (
     member_group_id int(9) not null auto_increment primary key,
     member_id int(9) not null,
@@ -202,7 +204,6 @@ create table member_group (
     foreign key (member_group_type_id) references member_group_type(member_group_type_id),
     foreign key (group_id) references groups(group_id));
 
--- member group table
 
 
 
