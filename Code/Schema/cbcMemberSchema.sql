@@ -196,7 +196,6 @@ create table member_group (
     member_group_type_id int(9) not null,
     year int(4) not null,
     description varchar(4000),
-    log_boat_id varchar(4000),                  -- for pointing to log book boat id that will be on the rack
     version bigint(19) not null default 0,
     date_created timestamp,
     last_updated date,
