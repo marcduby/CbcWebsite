@@ -39,7 +39,11 @@ create table member_status (
 insert into member_status values(1, 'Active', 'Member in active status, can use all facilities');
 insert into member_status values(2, 'Inactive', 'Member in inactive status, cannot use all facilities');
 insert into member_status values(3, 'Wait list', 'Member in inactive wait list status, cannot use all facilities');
-
+insert into member_status values(4, 'Non Resident', 'Member in non resident status.');
+insert into member_status values(5, 'Senior', 'Member in senior status.');
+insert into member_status values(6, 'Former', 'Former member.');
+insert into member_status values(7, 'Honorary', 'Honorary member.');
+insert into member_status values(8, 'Honorary (voting)', 'Honorary voting member.');
 
 -- member type lookup table
 create table member_type (
@@ -48,8 +52,9 @@ create table member_type (
     description varchar(4000));
 
 -- insert rows into member type table
-insert into member_type values(1, 'Rowing member', 'Member is a rowing member, to be billed accordingly');
-insert into member_type values(2, 'Social member', 'Member is a social member, to be billed accordingly');
+insert into member_type values(1, 'Primary', 'Member is the primary member, to be billed accordingly');
+insert into member_type values(2, 'Partner', 'Member is a partner member, not to be billed');
+insert into member_type values(3, 'Child', 'Member is a child member, not to be billed');
     
 -- rack type lookup table
 create table rack_type (
@@ -159,7 +164,7 @@ create table activity (
 
 -- member table
 create table member (
-    member_id int(9) not null auto_increment primary key,
+    member_id int(9) not null primary key,
     primary_member_id int(9) not null,
     first_name varchar(4000) not null,
     middle_name varchar(4000),
