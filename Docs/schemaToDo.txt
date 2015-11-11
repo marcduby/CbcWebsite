@@ -1,5 +1,12 @@
 
 
+20151110
+- add in account open/locked field
+- q: admin members?
+
+
+
+
 20151103
 - add initiation fee and past payements?
 - cost to locker type?
