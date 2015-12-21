@@ -59,3 +59,5 @@ insert into member (member_id, primary_member_id, first_name, last_name, member_
 -- set HK to child type
 update member set member_type_id = 3 where member_id = 1990;
 
+
+

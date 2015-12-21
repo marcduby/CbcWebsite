@@ -179,7 +179,7 @@ create table member (
     address_zip_code varchar(400) null,
     address_country varchar(400) null,
     address_phone_primary varchar(40) null,
-    address_phnoe_secondary varchar(40) null,
+    address_phone_secondary varchar(40) null,
     member_since int(11) null,
     username varchar(400) null,
     password varchar(400) null,
