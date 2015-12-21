@@ -13,11 +13,11 @@ update jos_comprofiler set cb_memberid = 1740 where id = 1994;       -- schock
 update jos_comprofiler set cb_memberid = 2072 where id = 2073;       -- cooley
 update jos_comprofiler set cb_memberid = 1198 where id = 2039;       -- egan
 update jos_comprofiler set cb_memberid = 1182 where id = 2038;       -- douglass
-
-
-
-
-
+update jos_comprofiler set cb_memberid = 2062 where id = 2090;       -- cusack
+update jos_comprofiler set cb_memberid = 1351 where id = 2068;       -- bakinowsky
+update jos_comprofiler set cb_memberid = 2016 where id = 2031;       -- walsh
+update jos_comprofiler set cb_memberid = 1562 where id = 2069;       -- duerr
+update jos_comprofiler set cb_memberid = 1943 where id = 1990;       -- kennelly
 
 
 
@@ -56,5 +56,6 @@ insert into member (member_id, primary_member_id, first_name, last_name, member_
 insert into member (member_id, primary_member_id, first_name, last_name, member_status_id, member_type_id, version, last_updated)
     select id, id, firstname, lastname, 8, 1, 0, sysdate() from jos_comprofiler where cb_membertype = 'Honorary, Voting';
 
-    
+-- set HK to child type
+update member set member_type_id = 3 where member_id = 1990;
 
